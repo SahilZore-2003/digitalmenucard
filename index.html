@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <div id="scrollpath"></div>
     <header id="header">
         <div class="container-fluid">
             <!-- navbar start  -->
@@ -1665,10 +1666,10 @@
     </section>
 
     <div class="loader" id="loader">
-          <div class="contents">
-             <h1>Digital</h1>
-             <h3>Menucard</h3>
-          </div>
+        <div class="contents">
+            <h1>Digital</h1>
+            <h3>Menucard</h3>
+        </div>
     </div>
 
 
@@ -1677,11 +1678,21 @@
 
     <script>
         let loader = document.getElementById('loader');
-        window.addEventListener('load',()=>{
-            setTimeout(()=>{
+        window.addEventListener('load', () => {
+            setTimeout(() => {
                 loader.style.display = "none";
-            },1000)
+            }, 1000)
         })
+
+        // scrollbar 
+        let progrss = document.getElementById("scrollpath");
+        let totalheight = document.body.scrollHeight - window.innerHeight;
+
+
+        window.onscroll = () => {
+            let progressHeight = (window.pageYOffset / totalheight) * 100;
+            progrss.style.height = progressHeight + "%";
+        }
 
         let serchbox = document.getElementById("search");
         document.getElementById('navbarSearch').addEventListener("click", () => {
