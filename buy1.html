@@ -38,14 +38,14 @@
       <div class="image">
         <img src="images/photo2.jpg" alt="" srcset="">
       </div>
-      <input type="text" class="form-control"  aria-describedby="emailHelp" name="item"
-        value="Timepass" id="item" readonly>
-      <input type="number" class="form-control"  aria-describedby="emailHelp"
-        placeholder="Enter table number" name="table" id="table">
-      <input type="number" class="form-control"  aria-describedby="emailHelp" placeholder="Quntity"
-        name="quntity" id="quntity">
-        <input type="text" id="datetime" style="width: 80%;text-align: center; display: none;" name="datetime" >
-        <input type="text" value="20" name="amount" style="display: none;">
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="item" value="Timepass" id="item"
+        readonly>
+      <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter table number"
+        name="table" id="table">
+      <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Quntity" name="quntity"
+        id="quntity">
+      <input type="text" id="datetime" style="width: 80%;text-align: center; display: none;" name="datetime">
+      <input type="text" value="20" name="amount" style="display: none;">
       <input type="submit" class="btn btn-dark btn-lg btn-block" value="ORDER" id="clickbtn">
     </form>
     <!-- foem ends  -->
@@ -56,34 +56,34 @@
 
 
     var date = new Date();
-	var current_date = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear() +"  "+date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();;
+    var current_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + "  " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();;
     document.getElementById('datetime').value = current_date;
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSB6frCs8Ln4mA5DnyOTH024xaS5K7-iy4k5GTtJuSE49Fege4PqzfJnsOHifRuGci/exec'
     const form = document.forms['order']
 
-    
-    form.addEventListener('submit', e => {
-            e.preventDefault()
-            document.getElementById("clickbtn").classList.remove("btn-dark");
-            document.getElementById("clickbtn").classList.add("btn-success");
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(() => {
-                    alert("thanks for order!!");
-                    Notification.requestPermission().then((perm) => {
-                    if(perm ==="granted"){
-                       const notify = new Notification("Digital Menucard",{
-                         body:"order successfully send!!",
-                         icon:"images/logo.png",
-                       })
-                    }else{
-                        console.log("permision denied!!")
-                    }
-                })
 
-                })
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      document.getElementById("clickbtn").classList.remove("btn-dark");
+      document.getElementById("clickbtn").classList.add("btn-success");
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(() => {
+          alert("thanks for order!!");
+          Notification.requestPermission().then((perm) => {
+            if (perm === "granted") {
+              const notify = new Notification("Digital Menucard", {
+                body: "order successfully send!!",
+                icon: "images/logo.png",
+              })
+            } else {
+              console.log("permision denied!!")
+            }
+          })
 
         })
+
+    })
   </script>
 
   <!-- Optional JavaScript -->
