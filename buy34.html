@@ -65,26 +65,15 @@
     const form = document.forms['order']
 
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        
-    })
-        let btn = document.getElementById('clickbtn');
-        btn.addEventListener("click", fun)
-        function fun() {
-            btn.style.background = "green";
-            btn.innerHTML = "Order placed";
-            let name = document.getElementById("item").value;
-            let table = document.getElementById("table").value;
-            let quntity = document.getElementById("quntity").value;
-            let halffull = document.getElementById("half-full").value;
-            //    let vegnonveg = document.getElementById("veg-nonveg").value;
-            let msg =
-                `*Item* =${name}%0a *table* *no* = ${table}%0a *quntity* = ${quntity}%0a *half/full* = ${halffull}`;
+            e.preventDefault()
+            document.getElementById("clickbtn").classList.remove("btn-dark");
+            document.getElementById("clickbtn").classList.add("btn-success");
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(() => {
+                    alert("thanks for order!!")
+                })
 
-            let url = 'https://wa.me/918605935547?text=' + msg;
-            window.open(url, '_blank').focus();
-        }
+        })
 
 
     </script>
