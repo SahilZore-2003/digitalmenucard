@@ -168,16 +168,21 @@ html {
 .loader .contents h3 {
     font-size: 40px;
     letter-spacing: 2;
- color: #49a6f2; background-image: -webkit-linear-gradient(0deg, #49a6f2 40%, #0eeb75 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
-          
-        
+    color: #49a6f2;
+    background-image: -webkit-linear-gradient(0deg, #49a6f2 40%, #0eeb75 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0;
 }
 
-#scrollpath{
+#scrollpath {
     position: fixed;
     top: 0;
     right: 0;
@@ -185,5 +190,5 @@ html {
     height: 100%;
     background-color: #be1010;
     z-index: 10;
-    
+
 }
