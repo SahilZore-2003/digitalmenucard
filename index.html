@@ -1672,6 +1672,10 @@
         </div>
     </div>
 
+    <span id="backbtn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+
 
 
 
@@ -1700,12 +1704,17 @@
         let serchbox = document.getElementById("search");
         document.getElementById('navbarSearch').addEventListener("click", () => {
             serchbox.focus();
+            
         })
 
 
         serchbox.addEventListener("focus", () => {
             document.getElementById('header').style.display = 'none';
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0);
+            document.getElementById('backbtn').style.display = "block";
+            document.getElementById('backbtn').addEventListener('click',()=>{
+                window.location.reload();
+            })
         })
 
         function myFunction() {
