@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
 * {
     padding: 0;
@@ -62,6 +63,11 @@ html {
     display: grid;
     place-items: center;
 
+}
+
+.drag h1{
+    font-weight: bold;
+    font-family: 'Bruno Ace SC', cursive;
 }
 
 .drag img {
@@ -151,33 +157,6 @@ html {
     justify-content: center;
 
 }
-
-.loader .contents {
-    font-weight: bold;
-    text-align: center;
-}
-
-.loader .contents h1 {
-    font-size: 60px;
-    letter-spacing: 2;
-    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.loader .contents h3 {
-    font-size: 40px;
-    letter-spacing: 2;
-    color: #49a6f2;
-    background-image: -webkit-linear-gradient(0deg, #49a6f2 40%, #0eeb75 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-
-
-}
-
 
 
 #backbtn
